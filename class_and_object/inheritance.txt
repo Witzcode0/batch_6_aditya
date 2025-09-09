@@ -1,0 +1,158 @@
+Single inh.
+--------------------------------------
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void a(){
+        cout<<"I am a method a"<<endl;
+    }
+};
+class B: public A{
+    public:
+    void b(){
+        cout<<"I am a method b"<<endl;
+    }
+};
+
+int main() {
+    B obj;
+    obj.a();
+    obj.b();
+  	
+    return 0;
+}
+
+multilevel inh.
+--------------------------------------
+
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void a(){
+        cout<<"I am a method a"<<endl;
+    }
+};
+class B: public A{
+    public:
+    void b(){
+        cout<<"I am a method b"<<endl;
+    }
+};
+class C: public B{
+    public:
+    void c(){
+        cout<<"I am a method c"<<endl;
+    }
+};
+
+int main() {
+    C obj;
+    obj.a();
+    obj.b();
+    obj.c();
+  	
+    return 0;
+}
+
+multiple inh.
+--------------------------------------
+
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void a(){
+        cout<<"I am a method a"<<endl;
+    }
+};
+class B{
+    public:
+    void b(){
+        cout<<"I am a method b"<<endl;
+    }
+};
+class C: public A, public B{
+    public:
+    void c(){
+        cout<<"I am a method c"<<endl;
+    }
+};
+
+int main() {
+    C obj;
+    obj.a();
+    obj.b();
+    obj.c();
+  	
+    return 0;
+}
+
+herarchical inh.
+-------------------------------
+
+#include <iostream>
+using namespace std;
+
+class Shape{
+    public:
+    void shape(){
+        cout<<"I am shape"<<endl;
+    }
+};
+class Shape2d: public Shape{
+    public:
+    void shape2d(){
+        cout<<"I am shape2d"<<endl;
+    }
+};
+class Circle: public Shape2d{
+    public:
+    void circle(){
+        cout<<"I am circle"<<endl;
+    }
+};
+class Square: public Shape2d{
+    public:
+    void square(){
+        cout<<"I am square"<<endl;
+    }
+};
+class Triangle: public Shape2d{
+    public:
+    void triangle(){
+        cout<<"I am triangle"<<endl;
+    }
+};
+class Shape3d: public Shape{
+    public:
+    void shape3d(){
+        cout<<"I am shape3d"<<endl;
+    }
+};
+
+class Cube: public Shape3d{
+    public:
+    void cube(){
+        cout<<"I am cube"<<endl;
+    }
+};
+class Cone: public Shape3d{
+    public:
+    void cone(){
+        cout<<"I am cone"<<endl;
+    }
+};
+
+int main() {
+   Cube obj;
+   obj.cube();
+   obj.shape3d();
+   obj.shape();
+  	
+    return 0;
+}
